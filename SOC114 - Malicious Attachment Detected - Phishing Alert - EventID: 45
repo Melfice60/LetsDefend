@@ -1,0 +1,36 @@
+Walkthrough of investigation on a phishing alert
+
+First step : Breakdown of alert information
+
+EventID : 45
+Event Time :Jan, 31, 2021, 03:48 PM
+Rule : SOC114 - Malicious Attachment Detected - Phishing Alert
+Level : Security Analyst
+SMTP Address : 49.234.43.39
+Source Address : accounting@cmail.carleton.ca
+Destination Address : richard@letsdefend.io
+E-mail Subject : Invoice
+Device Action : Allowed
+
+Important information at first look : the mail have been allowed despite the alert, the user may have access the potential malicious attachment
+
+Second step : Collection of IoC
+
+We have a look at the mail to obtain more information about what should be pass through threat intel
+
+From: accounting@cmail.carleton.ca
+To: richard@letsdefend.io
+Subject: Invoice
+Date: Jan, 31, 2021, 03:48 PM
+Action: Allowed
+
+Dear customer, Your invoice for the shopping you have done is attached. Regards.
+
+Attachments : c9ad9506bcccfaa987ff9fc11b91698d
+
+Important data for threat intel : 
+accounting@cmail.carleton.ca
+49.234.43.39
+c9ad9506bcccfaa987ff9fc11b91698d
+
+Analysis of 
